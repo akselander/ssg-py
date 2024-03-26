@@ -91,7 +91,7 @@ def h_block_to_html_node(block):
 def c_block_to_html_node(block):
     lines = block.split("\n")[1:-1]
 
-    return ParentNode("code", text_to_html_nodes(" ".join(lines)))
+    return ParentNode("pre", [ParentNode("code", text_to_html_nodes(" ".join(lines)))])
 
 
 def bq_block_to_html_node(block):

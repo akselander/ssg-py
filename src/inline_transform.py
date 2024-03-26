@@ -10,6 +10,12 @@ from textnode import (
 
 from htmlnode import LeafNode
 
+
+def text_to_html_nodes(text):
+    nodes = text_to_textnodes(text)
+    return map(text_node_to_html_node, nodes)
+
+
 def text_to_textnodes(text):
     nodes = [TextNode(text, text_type_text)]
     nodes = split_nodes_delimiter(nodes, "**", text_type_bold)

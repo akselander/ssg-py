@@ -18,8 +18,8 @@ Requirements:
     - links
     - images
     - text
-- TODO: copy static files
-- TODO: generate pages
+- copy files from static to pages
+- generate pages from content markdown files to public/html
 
 ## Running
 - `./main.sh` to run the builder

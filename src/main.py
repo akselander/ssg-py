@@ -1,6 +1,6 @@
 import os
 import shutil
-from generate import generate_page
+from generate import generate_page_recursive
 
 
 def copy(source, dest):
@@ -19,6 +19,7 @@ def copy(source, dest):
 
 path_static = "static"
 path_public = "public"
+path_content = "content"
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
     print(f"Copying files from {path_static} to {path_public}...")
     copy("static", "public")
 
-    generate_page("content/index.md", "template.html", "public/index.html")
+    generate_page_recursive(path_content, "template.html", path_public)
 
 
 main()

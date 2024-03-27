@@ -1,6 +1,6 @@
 import os
 import shutil
-from textnode import TextNode
+from generate import generate_page
 
 
 def copy(source, dest):
@@ -27,6 +27,8 @@ def main():
         shutil.rmtree(path_public)
     print(f"Copying files from {path_static} to {path_public}...")
     copy("static", "public")
+
+    generate_page("content/index.md", "template.html", "public/index.html")
 
 
 main()
